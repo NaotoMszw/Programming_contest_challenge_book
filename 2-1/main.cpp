@@ -6,13 +6,14 @@
 
 #include "partial_sum.h"
 #include "lake_counting.h"
-
-std::vector<int> array_0 = {1,2,4,7};
-int k_0 = 11;
+#include "maze.h"
 
 int exe(int index){
 
     if(index == 0){
+
+        std::vector<int> array_0 = {1,2,4,7};
+        int k_0 = 11;
 
         bool flag = false;
         if( dfs(array_0, k_0, 0, 0) ){
@@ -67,6 +68,46 @@ int exe(int index){
         std::cout << "water cnt: " << res << std::endl;
     }
 
+    else if(index == 2){
+
+        std::cout << "maze" << std::endl;
+
+        std::array< std::array<std::string, 96>, 96> maze;
+        std::string start = "s";
+        std::string end = "e";
+        std::string passage = ".";
+        std::string wall = "w";
+
+        std::srand(time(NULL));
+        for(int y = 0; y < maze.size(); y++){
+            for(int x = 0; x < maze[0].size(); x++){
+
+                if(y == 0 && x == 0){
+
+                    maze[y][x] = start;
+                }
+                else if(y == maze.size() - 1 && x == maze[0].size() -1){
+
+                    maze[y][x] = end;
+                }
+                else{
+
+                    int r = rand();
+                    if(r % 8 == 0){
+
+                        maze[y][x] = wall;
+                    }
+                    else{
+
+                        maze[y][x] = passage;
+                    }
+                 }
+            }
+        }
+
+        int turn = search_maze(0, 0, maze.size(), maze[0].size(), maze);
+    }
+
     return 0;
 }
 
@@ -74,4 +115,5 @@ int main(){
 
     exe(0);
     exe(1);
+    exe(2);
 }
