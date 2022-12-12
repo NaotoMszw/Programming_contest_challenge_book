@@ -72,7 +72,7 @@ int exe(int index){
 
         std::cout << "maze" << std::endl;
 
-        std::array< std::array<std::string, 96>, 96> maze;
+        std::array< std::array<std::string, 12>, 12> maze;
         std::string start = "s";
         std::string end = "e";
         std::string passage = ".";
@@ -105,7 +105,8 @@ int exe(int index){
             }
         }
 
-        int turn = search_maze(0, 0, maze.size(), maze[0].size(), maze);
+        int turn = search_maze(0, 0, maze.size(), maze[0].size(), maze, start, end, passage, end);
+        std::cout << "Turn: " << turn << std::endl;
     }
 
     return 0;
