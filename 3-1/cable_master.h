@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <float.h>
 
@@ -21,7 +22,6 @@ int solve_cable_master(std::vector<float> y, int k){
 
     while(ub - lb > e){
 
-        std::cout << ub << " " << lb << std::endl;
         float mid = (lb + ub) / 2.0;
         if(judge(y, k, mid)){
 
