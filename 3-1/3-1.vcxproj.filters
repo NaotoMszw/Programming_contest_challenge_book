@@ -29,5 +29,8 @@
     <ClInclude Include="solve_aggressive_cows.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="solve_mean_maximization.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

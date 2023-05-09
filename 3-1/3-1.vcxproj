@@ -145,6 +145,7 @@
     <ClInclude Include="cable_master.h" />
     <ClInclude Include="lower_bound.h" />
     <ClInclude Include="solve_aggressive_cows.h" />
+    <ClInclude Include="solve_mean_maximization.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
